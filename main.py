@@ -10,7 +10,22 @@ if __name__ == '__main__':
     choice = int(input("Enter Options Num : "))
 
     if choice == 1:
-        print("Start")
+        for key, value in symbols.items():
+            print(f"  {value} - {key}")
+
+        symbol_num = int(input("Enter Symbol Num : "))
+
+        symbol = ""
+        for key, value in symbols.items():
+            if value == symbol_num:
+                symbol = key
+
+        if symbol != "":
+            quantity = int(input("Enter Quantity : "))
+            print(f'trade {quantity} - {symbol}')
+
+        else:
+            print("Wrong Symbol's Num")
 
     elif choice == 2:
         exit()
